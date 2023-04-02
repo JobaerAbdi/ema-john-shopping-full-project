@@ -6,7 +6,7 @@ import './Product.css';
 
 const Product = (props) => {
 
-    const { img, name, seller, ratings, price } = props.product;
+    const { img, name, seller, ratings, price ,shipping } = props.product;
     const handleAddToCart = props.handleAddToCart;
 
 
@@ -16,13 +16,14 @@ const Product = (props) => {
             <div className='product-info'>
                 <h6 className='product-name'>{name}</h6>
                 <p>Price: ${price}</p>
+                <p>Shipping: ${shipping}</p>
                 <p>Manufacturer: {seller}</p>
                 <p>Rating: {ratings} Stars</p>
             </div>
             <button onClick={() => handleAddToCart(props.product)} className='btn-cart'>
                 Add to Cart
                 <FontAwesomeIcon icon={faShoppingCart} />
-                </button>
+            </button>
         </div>
     );
 };
